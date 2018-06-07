@@ -1,5 +1,5 @@
 
-download 'chromedriver.exe'
+You must download 'chromedriver.exe' by following reference
 reference: https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
 
 Manipulate variables in the crawler_main.py
