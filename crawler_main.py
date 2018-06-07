@@ -13,10 +13,11 @@ import pandas as pd
 q_cond = 'Metastatic+Cancer'
 q_term = 'drug'
 res_file = q_cond+'_'+q_term+'.csv'
+chromedriver = 'D:\PycharmProjects\crawler\chromedriver'
+cntry = '' #'KR'
 
-
-driver = webdriver.Chrome('D:\PycharmProjects\crawler\chromedriver')
-driver.get("https://clinicaltrials.gov/ct2/results?cond="+q_cond+"&term="+q_term+"&cntry=&state=&city=&dist=")
+driver = webdriver.Chrome(chromedriver)
+driver.get("https://clinicaltrials.gov/ct2/results?cond="+q_cond+"&term="+q_term+"&cntry="+cntry+"+&state=&city=&dist=")
 
 cthome = "https://clinicaltrials.gov"
 
