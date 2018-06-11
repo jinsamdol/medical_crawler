@@ -1,0 +1,10 @@
+
+You must download 'chromedriver.exe' by following reference
+reference: https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
+
+Manipulate variables in the crawler_main.py
+q_cond = 'Metastatic+Cancer' #condition. (use + sign for delimeter of words)
+q_term = '' #you can use this term empty or 'drug' or etc.
+res_file = q_cond+'_'+q_term+'.csv' #convention for the result file name
+chromedriver = 'D:\PycharmProjects\crawler\chromedriver' #the location of the chromedriver.exe in your PD
+cntry = '' #example: 'KR' . you can leave this term empty if you want to collect whole contry.
