@@ -88,19 +88,21 @@ for url in urls:
         if t.find(text=re.compile("Inclusion Criteria")):
             #print("=========================================")
             ts = str(t)
-            idx = re.search("<p style=.+(I|i)nclusion (C|c)riteria", ts).start()
-            ts2 = ts[idx:]
-            idx = ts2.index("</div>")
-            ts2 = ts2[:idx]
-            final = re.compile(r'<.*?>')  # tags look like <...>
+            if re.search("<p style=.+(I|i)nclusion (C|c)riteria", ts) is not None:
+                idx = re.search("<p style=.+(I|i)nclusion (C|c)riteria", ts).start()
+                ts2 = ts[idx:]
+                idx = ts2.index("</div>")
+                ts2 = ts2[:idx]
+                final = re.compile(r'<.*?>')  # tags look like <...>
 
-            criteria = final.sub('', ts2)
+                criteria = final.sub('', ts2)
             break
 
 
     d = [id_, '\"'+title+'\"', criteria, url]
 
     df.loc[len(df)] = d
+    time.sleep(1)
 
 df.to_csv(res_file, index=True, encoding='utf-8')
 
